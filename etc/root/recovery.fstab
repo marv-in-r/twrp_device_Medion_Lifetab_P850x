@@ -16,9 +16,9 @@
 
 # Mount point		FStype					Device													Flags
 
-/system       ext4        /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system        /dev/block/mmcblk0p20     flags=display="System";backup=1;canbewiped;wipeingui
-/cache        ext4        /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache         /dev/block/mmcblk0p21     flags=display="Cache";canbewiped;wipeingui;wipeduringfactoryreset
-/data         ext4        /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata      /dev/block/mmcblk0p22     flags=length=-16384;display="Data";backup=1;canbewiped;wipeingui;wipeduringfactoryreset;settingsstorage;encryptable=/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/metadata
+/system       ext4        /dev/block/dm-0        ro,seclabel,relatime,data=ordered 0 0
+/cache        ext4        /dev/block/by-name/android_cache     rw,seclabel,nosuid,nodev,noatime,errors=panic,data=ordered 0 0
+/data         ext4        /dev/block/dm-1     rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,errors=panic,data=ordered 0 0
 
 /boot         emmc        /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/boot          /dev/block/mmcblk0p7      flags=display="Boot";backup=1;flashimg=1
 /logo         emmc        /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/logo          /dev/block/mmcblk0p9      flags=display="Logo";backup=1;flashimg=1
