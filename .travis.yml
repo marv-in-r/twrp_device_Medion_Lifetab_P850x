@@ -31,9 +31,9 @@ script:
     EOF
 after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
-  - cp $HOME/twrp/out/target/product/$$DEVICE$$/recovery.img $HOME/twrp/TWRP-$version-$$DEVICE$$-$(date +"%Y%m%d")-Unofficial.img
+  - cp $HOME/twrp/out/target/product/P850X/recovery.img $HOME/twrp/TWRP-$version-P850X-$(date +"%Y%m%d")-Unofficial.img
   - cd $HOME/twrp/
-  - curl -s --upload-file TWRP-$version-$$DEVICE$$-$(date +"%Y%m%d")-Unofficial.img https://transfer.sh/ && echo ""
+  - curl -s --upload-file TWRP-$version-P850X-$(date +"%Y%m%d")-Unofficial.img https://transfer.sh/ && echo ""
 deploy:
   skip_cleanup: true
   provider: releases
