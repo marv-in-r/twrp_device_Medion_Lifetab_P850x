@@ -20,7 +20,7 @@ before_script:
 script:
   # Replace your $$USERNAME$$, $$REPO_URL$$, $$BRAND$$, $$DEVICE$$ 
   - cd $HOME/twrp/ && git clone https://github.com/marv-in-r/twrp_device_Medion_Lifetab_P850x.git device/MEDION/P850X
-  - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery -b android-7.1 --depth 1 bootable/recovery
+  - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery -b android-9.0 --depth 1 bootable/recovery
   # Get the Modified TWRPuilder Counter Part of the Tree
   - git clone https://github.com/ZeoRexDevs/device_generic_mtk_twrpbuilder device/generic/twrpbuilder
   - |
