@@ -23,7 +23,7 @@ script:
   - rm -rf bootable/recovery && git clone https://github.com/omnirom/android_bootable_recovery -b android-7.1 --depth 1 bootable/recovery
   # Get the Modified TWRPuilder Counter Part of the Tree
   - git clone https://github.com/ZeoRexDevs/device_generic_mtk_twrpbuilder device/generic/twrpbuilder
-  - |docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/cmbuild/twrp/:rw,z" yshalsager/cyanogenmod bash << EOF
+  - | docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g) -v "$(pwd):/home/cmbuild/twrp/:rw,z" yshalsager/cyanogenmod bash << EOF
     cd /home/cmbuild/twrp/
     source build/envsetup.sh && lunch omni_P850X-eng && mka recoveryimage
     exit
